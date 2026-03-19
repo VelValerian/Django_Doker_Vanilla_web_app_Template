@@ -1,0 +1,12 @@
+# 🔱 ISOLATED REPOSITORY (V2.0)
+.env
+*.env
+db.sqlite3
+pgdata/
+dbdata/
+__pycache__/
+*.pyc
+.pytest_cache/
+node_modules/
+static/css/styles.css.map
+media/

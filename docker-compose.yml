@@ -1,0 +1,61 @@
+# 🔱 STACK ORCHESTRATOR (V2.0)
+services:
+
+  # 🗄️ DATABASE: PostgreSQL 16
+  db:
+    build:
+      context: .
+      dockerfile: docker/db/Dockerfile
+    env_file: .env
+    volumes:
+      - ./dbdata/postgres:/var/lib/postgresql/data/
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "${POSTGRES_USER}", "-d", "${POSTGRES_DB}"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    networks:
+      - internal
+
+  # 🏗️ CACHE: Redis 7
+  redis:
+    image: redis:7-alpine
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    networks:
+      - internal
+
+  # 🌀 WEB: Django 5.2 (Python 3.13)
+  web:
+    build:
+      context: .
+      dockerfile: docker/web/Dockerfile
+    env_file: .env
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/src/
+    depends_on:
+      db:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    networks:
+      - internal
+
+  # 🎨 STYLES: Sass Compiler (Node 20)
+  styles:
+    build:
+      context: .
+      dockerfile: docker/styles/Dockerfile
+    volumes:
+      - .:/src/
+    networks:
+      - internal
+
+networks:
+  internal:
+    driver: bridge

@@ -1,0 +1,9 @@
+# 🛡️ PROTECT BUILD CONTEXT (V2.0)
+.git/
+.env
+pgdata/
+dbdata/
+__pycache__/
+*.pyc
+node_modules/
+media/

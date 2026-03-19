@@ -1,0 +1,20 @@
+// 🏛️ MAIN STYLE ENTRY (V2.0)
+@use 'tokens/variables' as *;
+@use 'tokens/normalize';
+@use 'tokens/fonts';
+@use 'tokens/mixins' as *;
+@use 'tokens/globals';
+@use 'tokens/utils';
+
+// 🧩 COMPONENTS (BEM)
+//@use 'blocks/button';
+//@use 'blocks/card';
+
+// 📄 PAGES
+//@use 'pages/home';
+
+body {
+    background-color: var(--bg-primary, #f9f9f9);
+    color: var(--text-primary, #1a1a1a);
+    font-family: var(--font-primary, sans-serif);
+}

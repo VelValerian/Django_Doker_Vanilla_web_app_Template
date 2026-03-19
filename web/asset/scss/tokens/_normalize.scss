@@ -1,0 +1,217 @@
+/**
+  Нормализация блочной модели
+*/
+*,
+::before,
+::after {
+    box-sizing: border-box;
+}
+
+/**
+  Убираем внутренние отступы слева тегам списков,
+  у которых есть атрибут class
+*/
+:where(ul, ol):where([class]) {
+    padding-left: 0;
+}
+
+/**
+  Убираем внешние отступы body и элементам с классом
+*/
+body,
+:where(blockquote, figure):where([class]) {
+    margin: 0;
+}
+
+/**
+  Убираем вертикальные внешние отступы типографике с классом
+*/
+:where(h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p,
+    ul,
+    ol,
+    dl):where([class]) {
+    margin-block: 0;
+}
+
+:where(dd[class]) {
+    margin-left: 0;
+}
+
+:where(fieldset[class]) {
+    margin-left: 0;
+    padding: 0;
+    border: none;
+}
+
+/**
+  Без маркеров у ul с классом
+*/
+:where(ul[class]) {
+    list-style: none;
+}
+
+:where(address[class]) {
+    font-style: normal;
+}
+
+/**
+  Параграфы: локальная переменная отступа вниз
+*/
+p {
+    --paragraphMarginBottom: 24px;
+    margin-block: 0;
+}
+
+p:where(:not([class]):not(:last-child)) {
+    margin-bottom: var(--paragraphMarginBottom);
+}
+
+/* =========================
+   Базовые настройки
+   ========================= */
+
+/* 1) Базовая типографика и рендеринг текста */
+html {
+    height: 100%;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+    -moz-tab-size: 4;
+    tab-size: 4;
+    text-rendering: optimizeLegibility;
+    font-synthesis-weight: none;
+    scroll-behavior: smooth;
+    /* единый источник правды для плавного скролла */
+}
+
+/* 2) Тело: корректный vh на мобайлах и базовый интерлиньяж */
+body {
+    min-height: 100dvh;
+    /* единый вариант высоты */
+    line-height: 1.5;
+    text-wrap: pretty;
+    overflow-wrap: anywhere;
+}
+
+/* 3) Ссылки: кликабельная зона/фокус */
+a:where([class]) {
+    display: inline-flex;
+}
+
+a {
+    text-decoration-skip-ink: auto;
+    -webkit-tap-highlight-color: transparent;
+}
+
+a:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 2px;
+}
+
+/* 4) Медиа — резиново и без артефактов (один блок вместо дублей) */
+img,
+svg,
+video,
+canvas {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+svg {
+    fill: currentColor;
+    /* иконки подстраиваются под color */
+}
+
+/* 5) Формы: только наследуем типографику (без глобального reset бордеров/фона) */
+input,
+button,
+textarea,
+select {
+    font: inherit;
+    color: inherit;
+    letter-spacing: inherit;
+}
+
+button,
+[role="button"] {
+    cursor: pointer;
+}
+
+:disabled {
+    cursor: default;
+}
+
+textarea {
+    resize: vertical;
+}
+
+fieldset {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+legend {
+    padding: 0;
+}
+
+
+/* 7) Акцентный цвет нативных контролов */
+input[type="checkbox"],
+input[type="radio"],
+progress,
+meter {
+    accent-color: currentColor;
+}
+
+/* 8) Таблицы (один блок вместо дублей) */
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+}
+
+th,
+td {
+    padding: 0.5rem;
+    vertical-align: top;
+}
+
+/* 9) Код и преформат */
+code,
+kbd,
+samp,
+pre {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+    font-size: 0.95em;
+}
+
+pre {
+    overflow: auto;
+}
+
+/* 10) SVG: без глобальных транзишнов для всех узлов (во избежание миганий) */
+/* (намеренно удалён: svg * { transition-property: fill, stroke; } ) */
+
+/* 11) Доступность: предпочитающие минимум движухи */
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    ::before,
+    ::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    html {
+        scroll-behavior: auto !important;
+        /* снимаем плавный скролл */
+    }
+}

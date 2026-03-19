@@ -1,0 +1,470 @@
+@charset "UTF-8";
+:root {
+  /* Base Colors */
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --color-gray-900: #222222;
+  --color-gray-800: #333333;
+  --color-gray-700: #444444;
+  --color-gray-600: #555555;
+  --color-gray-400: #888888;
+  --color-gray-200: #999999;
+  --color-orange: #FF9447;
+  --color-red: #FF510B;
+  --color-green: #75E87E;
+  /* Opacity Colors */
+  --color-gray-800-015: rgba(51, 51, 51, 0.15);
+  --color-gray-600-015: rgba(85, 85, 85, 0.15);
+  --color-red-03: rgba(255, 81, 11, 0.3);
+  --color-red-075: rgba(255, 81, 11, 0.75);
+  /* Semantic States */
+  --color-success: var(--color-green);
+  --color-error: #FF3B3B;
+  --color-warning: #FFA500;
+  --color-info: #3399FF;
+  /* Project Colors */
+  --color-primary: var(--color-white);
+  --color-accent-main-gradient-180: linear-gradient(180deg, var(--color-orange), var(--color-red));
+  --color-accent-main-gradient-90: linear-gradient(90deg, var(--color-orange), var(--color-red));
+  --color-white-accent-main-gradient-360: linear-gradient(360deg, var(--color-white), var(--color-red));
+  --color-white-accent-main-gradient-90: linear-gradient(90deg, var(--color-white), var(--color-orange));
+  --color-orange-accent-main-gradient-90: linear-gradient(90deg, var(--color-orange), var(--color-red));
+  --color-accent-orange: var(--color-orange);
+  --color-accent-red: var(--color-red);
+  --color-accent-green: var(--color-green);
+  /* Project Background Colors */
+  --background-main-gradient: linear-gradient(180deg, var(--color-black), var(--color-gray-600));
+  --background-island-primary-gradient: linear-gradient(180deg, var(--color-gray-800-015), var(--color-gray-600-015));
+  --background-island-hover-gradient: linear-gradient(180deg, rgba(11, 0, 76, 0.3), var(--color-red-03));
+  --background-card-main-gradient: linear-gradient(180deg, rgba(85, 85, 85, 0.05), var(--color-gray-800));
+  --background-card-hover-gradient: linear-gradient(180deg, rgba(11, 0, 76, 0.3), var(--color-red-03));
+  --background-card-select-gradient: linear-gradient(180deg, rgba(11, 0, 76, 0.75), var(--color-red-075));
+  --background-icon-primary: var(--color-primary);
+  --background-icon-secondary: var(--color-green);
+  --background-icon-hover-gradient: linear-gradient(180deg, var(--color-primary), var(--color-red));
+  --background-icon-click-gradient: linear-gradient(180deg, var(--color-orange), var(--color-red));
+  --background-button-primary-gradient: linear-gradient(90deg, var(--color-primary), var(--color-gray-200));
+  --background-button-hover-gradient: linear-gradient(90deg, var(--color-gray-400), var(--color-gray-900));
+  --background-button-click-gradient: linear-gradient(90deg, var(--color-orange), var(--color-red));
+  --background-nav-primary: rgba(255, 255, 255, 0);
+  --background-nav-hover: rgba(255, 255, 255, 0);
+  --background-nav-click-gradient: linear-gradient(180deg, var(--color-orange), var(--color-red));
+  --background-nav-selected-gradient: linear-gradient(90deg, var(--color-gray-900), var(--color-gray-700));
+  --background-text-field-primary-gradient: linear-gradient(90deg, var(--color-gray-700), var(--color-gray-900));
+  --background-text-field-hover-gradient: linear-gradient(90deg, var(--color-gray-700), var(--color-gray-900));
+  --background-text-field-selected-gradient: linear-gradient(90deg, var(--color-gray-900), var(--color-gray-700));
+  /* Project Text Colors */
+  --text-color-primary: var(--color-primary);
+  --text-color-secondary: rgba(255, 255, 255, 0.75);
+  --text-color-tertary: var(--color-gray-200);
+  --text-color-alt: var(--color-black);
+  --text-color-button-primary: var(--color-black);
+  --text-color-button-hover: var(--color-red);
+  --text-color-button-click: var(--color-primary);
+  /* Project Borders Colors */
+  --border-button-primary: 1px solid var(--color-black);
+  --border-button-hover: 1px solid var(--color-red);
+  --border-button-click: 1px solid var(--color-primary);
+  --border-nav-primary: 1px solid rgba(255, 255, 255, 0);
+  --border-nav-hover: 1px solid var(--color-orange);
+  --border-nav-click: 1px solid var(--color-primary);
+  --border-nav-selected: 1px solid var(--color-gray-700);
+  --border-text-field-primary: 1px solid var(--color-gray-400);
+  --border-text-field-hover: 1px solid var(--color-red);
+  --border-text-field-selected: 1px solid var(--color-primary);
+  /* Project Radius */
+  --border-radius-island-large: 32px;
+  --border-radius-island-medium: 28px;
+  --border-radius-island-small: 20px;
+  --border-radius-card-large: 32px;
+  --border-radius-card-medium: 20px;
+  --border-radius-card-small: 16px;
+  --border-radius-button: 8px;
+  --border-radius-nav-button: 8px;
+  --border-radius-text-field: 12px;
+  --border-radius-element: 20px;
+  /* Project Effects */
+  --shadow-island-inner-large: inset 0px 4px 32px 0px rgba(255, 255, 255, 0.25);
+  --shadow-island-inner-medium: inset 0px 4px 24px 0px rgba(255, 255, 255, 0.25);
+  --shadow-island-inner-small: inset 0px 4px 12px 0px rgba(255, 255, 255, 0.25);
+  --shadow-card-inner-large: inset 0px 4px 12px 0px rgba(255, 255, 255, 0.25);
+  --shadow-card: 0px 8px 12px 0px rgba(0, 0, 0, 0.2);
+  --shadow-card-inner-small: inset 0px 4px 8px 0px rgba(255, 255, 255, 0.25);
+  --shadow-pagination: inset -2px -2px 4px 0px rgba(255, 148, 71, 0.25);
+  --shadow-pagination-active: inset -4px -4px 4px 0px rgba(0, 0, 0, 0.35);
+  --blur-bg-island-large: blur(8px);
+  /* Other */
+  --font-family-base: 'Zen Maru Gothic', sans-serif;
+  --font-family-sub: 'Roboto', sans-serif;
+  --container-width: 1160px;
+  --island-padding-x-large: 32px;
+  --island-padding-x-small: 12px;
+  --section-padding-desktop-y: 20px;
+  --section-padding-tablet-y: 16px;
+  --section-padding-mobile-y: 12px;
+  --input-hight-text-field: 48px;
+  --button-height: 38px;
+  --transition-duration: 0.2s;
+}
+
+/**
+  Нормализация блочной модели
+*/
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+/**
+  Убираем внутренние отступы слева тегам списков,
+  у которых есть атрибут class
+*/
+:where(ul, ol):where([class]) {
+  padding-left: 0;
+}
+
+/**
+  Убираем внешние отступы body и элементам с классом
+*/
+body,
+:where(blockquote, figure):where([class]) {
+  margin: 0;
+}
+
+/**
+  Убираем вертикальные внешние отступы типографике с классом
+*/
+:where(h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+dl):where([class]) {
+  margin-block: 0;
+}
+
+:where(dd[class]) {
+  margin-left: 0;
+}
+
+:where(fieldset[class]) {
+  margin-left: 0;
+  padding: 0;
+  border: none;
+}
+
+/**
+  Без маркеров у ul с классом
+*/
+:where(ul[class]) {
+  list-style: none;
+}
+
+:where(address[class]) {
+  font-style: normal;
+}
+
+/**
+  Параграфы: локальная переменная отступа вниз
+*/
+p {
+  --paragraphMarginBottom: 24px;
+  margin-block: 0;
+}
+
+p:where(:not([class]):not(:last-child)) {
+  margin-bottom: var(--paragraphMarginBottom);
+}
+
+/* =========================
+   Базовые настройки
+   ========================= */
+/* 1) Базовая типографика и рендеринг текста */
+html {
+  height: 100%;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  -moz-tab-size: 4;
+  tab-size: 4;
+  text-rendering: optimizeLegibility;
+  font-synthesis-weight: none;
+  scroll-behavior: smooth;
+  /* единый источник правды для плавного скролла */
+}
+
+/* 2) Тело: корректный vh на мобайлах и базовый интерлиньяж */
+body {
+  min-height: 100dvh;
+  /* единый вариант высоты */
+  line-height: 1.5;
+  text-wrap: pretty;
+  overflow-wrap: anywhere;
+}
+
+/* 3) Ссылки: кликабельная зона/фокус */
+a:where([class]) {
+  display: inline-flex;
+}
+
+a {
+  text-decoration-skip-ink: auto;
+  -webkit-tap-highlight-color: transparent;
+}
+
+a:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}
+
+/* 4) Медиа — резиново и без артефактов (один блок вместо дублей) */
+img,
+svg,
+video,
+canvas {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+svg {
+  fill: currentColor;
+  /* иконки подстраиваются под color */
+}
+
+/* 5) Формы: только наследуем типографику (без глобального reset бордеров/фона) */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  color: inherit;
+  letter-spacing: inherit;
+}
+
+button,
+[role=button] {
+  cursor: pointer;
+}
+
+:disabled {
+  cursor: default;
+}
+
+textarea {
+  resize: vertical;
+}
+
+fieldset {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+legend {
+  padding: 0;
+}
+
+/* 7) Акцентный цвет нативных контролов */
+input[type=checkbox],
+input[type=radio],
+progress,
+meter {
+  accent-color: currentColor;
+}
+
+/* 8) Таблицы (один блок вместо дублей) */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+}
+
+th,
+td {
+  padding: 0.5rem;
+  vertical-align: top;
+}
+
+/* 9) Код и преформат */
+code,
+kbd,
+samp,
+pre {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+  font-size: 0.95em;
+}
+
+pre {
+  overflow: auto;
+}
+
+/* 10) SVG: без глобальных транзишнов для всех узлов (во избежание миганий) */
+/* (намеренно удалён: svg * { transition-property: fill, stroke; } ) */
+/* 11) Доступность: предпочитающие минимум движухи */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  html {
+    scroll-behavior: auto !important;
+    /* снимаем плавный скролл */
+  }
+}
+@font-face {
+  font-family: "font-name";
+  src: url("font-path") format("woff2");
+  font-weight: "font-weight-in-number";
+  font-style: "font-style-like-normal-italic";
+  font-display: "font-display-like-swap-optional-fallback";
+}
+body {
+  font-size: clamp(16px, 0.9375vw, 18px);
+  font-family: var(--font-family-base);
+  font-weight: 700;
+  line-height: 1.28;
+  color: var(--color-text-primary);
+  background: var(--background-main-gradient);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  min-height: 100vh;
+  overflow-x: hidden;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+
+footer,
+.footer {
+  margin-top: auto;
+}
+
+a,
+button,
+input,
+textarea,
+svg * {
+  transition-duration: var(--transition-duration);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-family-base), sans-serif;
+  font-weight: 700;
+}
+
+h1,
+.h1 {
+  font-size: clamp(36px, 2.9166666667vw, 56px);
+}
+
+h2,
+.h2 {
+  font-size: clamp(32px, 2.0833333333vw, 40px);
+}
+
+h3,
+.h3 {
+  font-size: clamp(24px, 1.5625vw, 30px);
+}
+
+h4,
+.h4 {
+  font-size: clamp(16px, 1.0416666667vw, 20px);
+}
+
+/* Микси настройки наведения учитывая тачскрин устройства */
+.container {
+  width: calc(var(--container-width) + var(--container-padding-x) * 2);
+  max-width: 1224px;
+  margin-inline: auto;
+  padding-inline: var(--island-padding-x-large);
+  padding-bottom: var(--island-padding-x-large);
+}
+@media (max-width: 768px) {
+  .container {
+    padding-inline: var(--island-padding-x-small);
+    padding-bottom: var(--island-padding-x-small);
+  }
+}
+
+.visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  margin: -1px !important;
+  border: 0 !important;
+  padding: 0 !important;
+  white-space: nowrap !important;
+  clip-path: inset(100%) !important;
+  clip: rect(0 0 0 0) !important;
+  overflow: hidden !important;
+}
+
+@media (max-width: 768px) {
+  .hidden-mobile {
+    display: none !important;
+  }
+}
+
+@media (min-width: 769px) {
+  .visible-mobile {
+    display: none !important;
+  }
+}
+
+@media (max-width: 1023px) {
+  .hidden-tablet {
+    display: none !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hidden-tablet-above {
+    display: none !important;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1440px) {
+  .hidden-between-tablet-above-and-desktop {
+    display: none !important;
+  }
+}
+
+@media (max-width: 1440px) {
+  .hidden-desktop {
+    display: none !important;
+  }
+}
+
+@media (min-width: 1441px) {
+  .hidden-desktop-above {
+    display: none !important;
+  }
+}
+
+body {
+  background-color: var(--bg-primary, #f9f9f9);
+  color: var(--text-primary, #1a1a1a);
+  font-family: var(--font-primary, sans-serif);
+}
+
+/*# sourceMappingURL=styles.css.map */

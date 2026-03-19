@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    {% include 'partials/head_meta.html' %}
+    {% include 'partials/head_assets.html' %}
+    {% include 'partials/analytics.html' %}
+    {% block extra_css %}{% endblock %}
+
+    <!-- HTMX -->
+    <script src="https://unpkg.com/htmx.org@2.0.4" integrity="sha384-HGfzY9zE997Xm7v45S9nSByoP5+7xZf8D9SjG7"
+        crossorigin="anonymous"></script>
+</head>
+
+<body class="{% block body_class %}{% endblock %}" hx-headers='{"X-CSRFToken": "{{ csrf_token }}"}'>
+
+    {% include 'layout/header.html' %}
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    {% include 'layout/footer.html' %}
+    {% include 'partials/scripts_footer.html' %}
+    {% block extra_js %}{% endblock %}
+</body>
+
+</html>

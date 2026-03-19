@@ -1,0 +1,15 @@
+{% load static %}
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>{% block title %}{{ site_settings.site_name|default:"NoMondays" }} | Creative Studio{% endblock %}</title>
+<meta name="description" content="{% block description %}{{ site_settings.site_description|default:" Премиальные
+    веб-решения для современного бизнеса." }}{% endblock %}">
+<meta name="keywords" content="{% block keywords %}web, design, development{% endblock %}">
+<meta name="author" content="NoMondays">
+
+{% include 'partials/favicons.html' %}
+{% include 'partials/og_tags.html' %}
+{% include 'partials/json_ld.html' %}
+
+<link rel="canonical" href="{% block canonical %}{{ request.build_absolute_uri }}{% endblock %}">

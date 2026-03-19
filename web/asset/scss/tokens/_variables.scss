@@ -1,0 +1,132 @@
+:root {
+    /* Base Colors */
+    --color-white: #ffffff;
+    --color-black: #000000;
+    --color-gray-900: #222222;
+    --color-gray-800: #333333;
+    --color-gray-700: #444444;
+    --color-gray-600: #555555;
+    --color-gray-400: #888888;
+    --color-gray-200: #999999;
+    --color-orange: #FF9447;
+    --color-red: #FF510B;
+    --color-green: #75E87E;
+
+    /* Opacity Colors */
+    --color-gray-800-015: rgba(51, 51, 51, 0.15);
+    --color-gray-600-015: rgba(85, 85, 85, 0.15);
+    --color-red-03: rgba(255, 81, 11, 0.3);
+    --color-red-075: rgba(255, 81, 11, 0.75);
+
+    /* Semantic States */
+    --color-success: var(--color-green);
+    --color-error: #FF3B3B;
+    --color-warning: #FFA500;
+    --color-info: #3399FF;
+
+    /* Project Colors */
+    --color-primary: var(--color-white);
+    --color-accent-main-gradient-180: linear-gradient(180deg, var(--color-orange), var(--color-red));
+    --color-accent-main-gradient-90: linear-gradient(90deg, var(--color-orange), var(--color-red));
+    --color-white-accent-main-gradient-360: linear-gradient(360deg, var(--color-white), var(--color-red));
+    --color-white-accent-main-gradient-90: linear-gradient(90deg, var(--color-white), var(--color-orange));
+    --color-orange-accent-main-gradient-90: linear-gradient(90deg, var(--color-orange), var(--color-red));
+    --color-accent-orange: var(--color-orange);
+    --color-accent-red: var(--color-red);
+    --color-accent-green: var(--color-green);
+
+    /* Project Background Colors */
+    --background-main-gradient: linear-gradient(180deg, var(--color-black), var(--color-gray-600));
+    --background-island-primary-gradient: linear-gradient(180deg, var(--color-gray-800-015), var(--color-gray-600-015));
+    --background-island-hover-gradient: linear-gradient(180deg, rgba(11, 0, 76, 0.3), var(--color-red-03));
+
+    --background-card-main-gradient: linear-gradient(180deg, rgba(85, 85, 85, 0.05), var(--color-gray-800));
+    --background-card-hover-gradient: linear-gradient(180deg, rgba(11, 0, 76, 0.3), var(--color-red-03));
+    --background-card-select-gradient: linear-gradient(180deg, rgba(11, 0, 76, 0.75), var(--color-red-075));
+
+    --background-icon-primary: var(--color-primary);
+    --background-icon-secondary: var(--color-green);
+    --background-icon-hover-gradient: linear-gradient(180deg, var(--color-primary), var(--color-red));
+    --background-icon-click-gradient: linear-gradient(180deg, var(--color-orange), var(--color-red));
+
+    --background-button-primary-gradient: linear-gradient(90deg, var(--color-primary), var(--color-gray-200));
+    --background-button-hover-gradient: linear-gradient(90deg, var(--color-gray-400), var(--color-gray-900));
+    --background-button-click-gradient: linear-gradient(90deg, var(--color-orange), var(--color-red));
+
+    --background-nav-primary: rgba(255, 255, 255, 0);
+    --background-nav-hover: rgba(255, 255, 255, 0);
+    --background-nav-click-gradient: linear-gradient(180deg, var(--color-orange), var(--color-red));
+    --background-nav-selected-gradient: linear-gradient(90deg, var(--color-gray-900), var(--color-gray-700));
+
+    --background-text-field-primary-gradient: linear-gradient(90deg, var(--color-gray-700), var(--color-gray-900));
+    --background-text-field-hover-gradient: linear-gradient(90deg, var(--color-gray-700), var(--color-gray-900));
+    --background-text-field-selected-gradient: linear-gradient(90deg, var(--color-gray-900), var(--color-gray-700));
+
+    /* Project Text Colors */
+    --text-color-primary: var(--color-primary);
+    --text-color-secondary: rgba(255, 255, 255, 0.75);
+    --text-color-tertary: var(--color-gray-200);
+    --text-color-alt: var(--color-black);
+
+    --text-color-button-primary: var(--color-black);
+    --text-color-button-hover: var(--color-red);
+    --text-color-button-click: var(--color-primary);
+
+    /* Project Borders Colors */
+    --border-button-primary: 1px solid var(--color-black);
+    --border-button-hover: 1px solid var(--color-red);
+    --border-button-click: 1px solid var(--color-primary);
+
+    --border-nav-primary: 1px solid rgba(255, 255, 255, 0);
+    --border-nav-hover: 1px solid var(--color-orange);
+    --border-nav-click: 1px solid var(--color-primary);
+    --border-nav-selected: 1px solid var(--color-gray-700);
+
+    --border-text-field-primary: 1px solid var(--color-gray-400);
+    --border-text-field-hover: 1px solid var(--color-red);
+    --border-text-field-selected: 1px solid var(--color-primary);
+
+    /* Project Radius */
+    --border-radius-island-large: 32px;
+    --border-radius-island-medium: 28px;
+    --border-radius-island-small: 20px;
+
+    --border-radius-card-large: 32px;
+    --border-radius-card-medium: 20px;
+    --border-radius-card-small: 16px;
+
+    --border-radius-button: 8px;
+    --border-radius-nav-button: 8px;
+
+    --border-radius-text-field: 12px;
+
+    --border-radius-element: 20px;
+
+    /* Project Effects */
+    --shadow-island-inner-large: inset 0px 4px 32px 0px rgba(255, 255, 255, 0.25);
+    --shadow-island-inner-medium: inset 0px 4px 24px 0px rgba(255, 255, 255, 0.25);
+    --shadow-island-inner-small: inset 0px 4px 12px 0px rgba(255, 255, 255, 0.25);
+    --shadow-card-inner-large: inset 0px 4px 12px 0px rgba(255, 255, 255, 0.25);
+    --shadow-card: 0px 8px 12px 0px rgba(0, 0, 0, 0.2);
+    --shadow-card-inner-small: inset 0px 4px 8px 0px rgba(255, 255, 255, 0.25);
+    --shadow-pagination: inset -2px -2px 4px 0px rgba(255, 148, 71, 0.25);
+    --shadow-pagination-active: inset -4px -4px 4px 0px rgba(0, 0, 0, 0.35);
+    --blur-bg-island-large: blur(8px);
+
+    /* Other */
+    --font-family-base: 'Zen Maru Gothic', sans-serif;
+    --font-family-sub: 'Roboto', sans-serif;
+
+    --container-width: 1160px;
+    --island-padding-x-large: 32px;
+    --island-padding-x-small: 12px;
+
+    --section-padding-desktop-y: 20px;
+    --section-padding-tablet-y: 16px;
+    --section-padding-mobile-y: 12px;
+
+    --input-hight-text-field: 48px;
+    --button-height: 38px;
+
+    --transition-duration: 0.2s;
+}
