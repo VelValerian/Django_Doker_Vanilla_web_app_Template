@@ -5,7 +5,7 @@ def home_view(request):
     Основная страница приложения (Landing Page).
     """
     return render(request, 'pages/home.html', {
-        'title': 'Nomondays | Creative Design Studio',
+        'title': 'BrandName | Creative Design Studio',
         'subtitle': 'Премиальные веб-решения для современного бизнеса. Мы создаем цифровой опыт, который вдохновляет.'
     })
 

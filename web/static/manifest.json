@@ -1,6 +1,6 @@
 {
-    "name": "NoMondays",
-    "short_name": "NoMondays",
+    "name": "BrandName",
+    "short_name": "BrandName",
     "start_url": "/",
     "display": "standalone",
     "background_color": "#ffffff",

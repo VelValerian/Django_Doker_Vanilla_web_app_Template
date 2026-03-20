@@ -1,4 +1,4 @@
-# 🌀 NOMONDAYS INFRASTRUCTURE MAKEFILE (V2.0)
+# 🌀 BRANDNAME INFRASTRUCTURE MAKEFILE (V2.0)
 
 .PHONY: help build up down restart logs shell migrate manage test test-html
 
