@@ -59,3 +59,34 @@
         display: none !important;
     }
 }
+// 📐 LAYOUT OBJECTS
+.o-container {
+    max-width: var(--container-width, 1200px);
+    margin-inline: auto;
+    padding-inline: 40px;
+    @include media.mobile { padding-inline: 20px; }
+}
+
+.o-grid {
+    display: grid;
+    gap: 40px;
+
+    &.o-grid--2-cols {
+        grid-template-columns: repeat(2, 1fr);
+        @include media.tablet { grid-template-columns: 1fr; }
+    }
+
+    &.o-grid--3-cols {
+        grid-template-columns: repeat(3, 1fr);
+        @include media.tablet { grid-template-columns: 1fr; }
+    }
+
+    &.o-grid--v-center {
+        align-items: center;
+    }
+}
+
+.o-spacer--lg {
+    height: 120px;
+    @include media.tablet { height: 60px; }
+}

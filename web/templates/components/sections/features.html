@@ -1,0 +1,38 @@
+{% load core_tags %}
+
+<section class="c-features">
+    <div class="o-container">
+        <header class="c-features__header">
+            <h2 class="c-features__title">Наши преимущества</h2>
+            <p class="c-features__subtitle">Почему клиенты выбирают Nomondays для реализации своих идей</p>
+        </header>
+        
+        <div class="o-grid o-grid--3-cols">
+            {% block features_list %}
+            <article class="c-features-card">
+                <div class="c-features-card__icon-wrapper">
+                    {% svg_icon 'design' 'c-features-card__icon' %}
+                </div>
+                <h3 class="c-features-card__title">Премиальный Дизайн</h3>
+                <p class="c-features-card__description">Эстетика и функциональность в каждом пикселе вашего проекта.</p>
+            </article>
+
+            <article class="c-features-card">
+                <div class="c-features-card__icon-wrapper">
+                    {% svg_icon 'performance' 'c-features-card__icon' %}
+                </div>
+                <h3 class="c-features-card__title">Высокая Скорость</h3>
+                <p class="c-features-card__description">Оптимизированный код и современные технологии для молниеносной работы.</p>
+            </article>
+
+            <article class="c-features-card">
+                <div class="c-features-card__icon-wrapper">
+                    {% svg_icon 'support' 'c-features-card__icon' %}
+                </div>
+                <h3 class="c-features-card__title">Надежная Поддержка</h3>
+                <p class="c-features-card__description">Мы всегда рядом, чтобы помочь вашему проекту расти и развиваться.</p>
+            </article>
+            {% endblock %}
+        </div>
+    </div>
+</section>

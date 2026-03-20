@@ -1,4 +1,10 @@
-// 🏛️ MAIN STYLE ENTRY (V2.0)
+// 🏛️ MAIN STYLE ENTRY (V2.2)
+// Порядок подключения критически важен:
+// 1. Токены (Settings, Mixins, Globals)
+// 2. Блоки (Generic Components)
+// 3. Страницы (Layout Assemblies & Single-use logic)
+
+// 🔱 TOKENS (Settings & Resets)
 @use 'tokens/variables' as *;
 @use 'tokens/normalize';
 @use 'tokens/fonts';
@@ -6,15 +12,15 @@
 @use 'tokens/globals';
 @use 'tokens/utils';
 
-// 🧩 COMPONENTS (BEM)
-//@use 'blocks/button';
-//@use 'blocks/card';
+// 🧩 BLOCKS (Atomic Components)
+@use 'blocks/button';
+@use 'blocks/form';
+@use 'blocks/hero';
+@use 'blocks/features';
+@use 'blocks/about';
+@use 'blocks/contact_info';
 
-// 📄 PAGES
-//@use 'pages/home';
-
-body {
-    background-color: var(--bg-primary, #f9f9f9);
-    color: var(--text-primary, #1a1a1a);
-    font-family: var(--font-primary, sans-serif);
-}
+// 📄 PAGES (Composition & Page-specific structure)
+@use 'pages/home';
+@use 'pages/about' as p_about;
+@use 'pages/contacts' as p_contacts;

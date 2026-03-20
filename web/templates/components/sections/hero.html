@@ -1,0 +1,23 @@
+{% load core_tags %}
+
+<section class="c-hero">
+    <div class="o-container">
+        <div class="c-hero__inner">
+            <h1 class="c-hero__title">
+                {% if title %}{{ title }}{% else %}Nomondays | Creative Studio{% endif %}
+            </h1>
+            <p class="c-hero__subtitle">
+                {% if subtitle %}{{ subtitle }}{% else %}Премиальные веб-решения для современного бизнеса.{% endif %}
+            </p>
+            <div class="c-hero__actions">
+                <a href="{% url 'pages:contacts' %}" class="c-btn c-btn--primary">
+                    Обсудить проект
+                    {% svg_icon 'arrow-right' 'c-btn__icon' %}
+                </a>
+                <a href="{% url 'pages:about' %}" class="c-btn c-btn--secondary">
+                    Узнать больше
+                </a>
+            </div>
+        </div>
+    </div>
+</section>

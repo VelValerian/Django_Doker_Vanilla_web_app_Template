@@ -1,0 +1,87 @@
+@use '../tokens/mixins' as *;
+@use '../tokens/media';
+
+.c-about-section {
+    padding-block: 120px;
+    background-color: var(--bg-primary, #fff);
+
+    @include media.tablet { padding-block: 80px; }
+
+    &__title {
+        font-family: var(--font-family-base);
+        font-size: clamp(32px, 5vw, 48px);
+        font-weight: 700;
+        margin-bottom: 32px;
+        color: var(--text-primary, #111);
+    }
+
+    &__text {
+        font-family: var(--font-family-sub);
+        font-size: clamp(18px, 1.5vw, 20px);
+        line-height: 1.6;
+        color: var(--text-secondary, #666);
+        margin-bottom: 48px;
+
+        p {
+            margin-bottom: 24px;
+
+            &:last-child { margin-bottom: 0; }
+        }
+    }
+
+    &__stats {
+        display: flex;
+        gap: 60px;
+        flex-wrap: wrap;
+
+        @include media.mobile { gap: 32px; }
+    }
+
+    &__image-wrap {
+        position: relative;
+        border-radius: 40px;
+        overflow: hidden;
+        box-shadow: 0 40px 120px rgba(0, 0, 0, 0.1);
+
+        &::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(0deg, rgba(0,0,0,0.1), transparent);
+        }
+
+        @include media.tablet { margin-top: 40px; }
+    }
+
+    &__image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        transition: transform 0.3s ease;
+
+        &:hover { transform: scale(1.02); }
+    }
+}
+
+.c-stat {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    &__number {
+        font-family: var(--font-family-base);
+        font-size: clamp(48px, 6vw, 64px);
+        font-weight: 700;
+        line-height: 1;
+        color: var(--accent-color, #111);
+    }
+
+    &__label {
+        font-family: var(--font-family-sub);
+        font-size: 16px;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--text-secondary, #666);
+    }
+}

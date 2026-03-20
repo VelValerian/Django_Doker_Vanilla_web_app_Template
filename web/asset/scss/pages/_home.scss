@@ -1,0 +1,33 @@
+@use '../tokens/mixins' as m;
+@use '../tokens/media';
+
+// 📄 PAGE: HOME
+// Специфические настройки только для главной страницы.
+
+.p-home {
+    &__hero-wrap {
+        // Обертка для героя, если нужны отступы или спец. фоны
+    }
+
+    &__section-gap {
+        margin-top: var(--section-padding-desktop-y, 40px);
+        
+        @include media.tablet {
+            margin-top: var(--section-padding-tablet-y, 20px);
+        }
+        
+        @include media.mobile {
+            margin-top: var(--section-padding-mobile-y, 16px);
+        }
+    }
+
+    &__cta-banner {
+        text-align: center;
+        padding: 60px 40px;
+        background: var(--background-island-primary-gradient);
+        border-radius: var(--border-radius-island-large);
+        margin-block: 80px;
+
+        @include media.tablet { padding: 40px 20px; }
+    }
+}

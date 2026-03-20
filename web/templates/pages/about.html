@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block content %}
+    {# 🏗️ ABOUT PAGE ASSEMBLY #}
+
+    {% include "components/sections/hero.html" with title=title subtitle=subtitle %}
+
+    <div class="o-spacer--lg"></div>
+
+    {% include "components/sections/about_section.html" %}
+
+    <div class="o-spacer--lg"></div>
+
+    <section class="c-about-full-text">
+        <div class="o-container">
+            <h2 class="c-about-full-text__title">Наша философия</h2>
+            <div class="c-about-full-text__content">
+                <p>Мы верим, что каждый бизнес уникален и заслуживает дизайна, который отражает его цели и ценности. Мы не работаем на поток — мы работаем на результат.</p>
+                <p>Наша команда состоит из профессионалов, которые прошли путь от простых фрилансеров до партнеров в крупной студии. Этот опыт позволяет нам смотреть на проект под разными углами.</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="o-spacer--lg"></div>
+
+    {% include "components/sections/features.html" with title="Наши услуги" subtitle="Что мы делаем лучше всего" %}
+
+    <div class="o-spacer--lg"></div>
+{% endblock %}

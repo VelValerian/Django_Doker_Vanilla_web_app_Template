@@ -1,0 +1,44 @@
+{% load core_tags %}
+
+<section class="c-contact-info">
+    <div class="c-contact-info__list">
+        <div class="c-contact-info__item">
+            <div class="c-contact-info__icon-wrapper">
+                {% svg_icon 'phone' 'c-contact-info__icon' %}
+            </div>
+            <div class="c-contact-info__content">
+                <h3 class="c-contact-info__label">Телефон</h3>
+                <a href="tel:+79991234567" class="c-contact-info__link">+7 (999) 123-4567</a>
+            </div>
+        </div>
+
+        <div class="c-contact-info__item">
+            <div class="c-contact-info__icon-wrapper">
+                {% svg_icon 'email' 'c-contact-info__icon' %}
+            </div>
+            <div class="c-contact-info__content">
+                <h3 class="c-contact-info__label">Электронная почта</h3>
+                <a href="mailto:hello@nomondays.ru" class="c-contact-info__link">hello@nomondays.ru</a>
+            </div>
+        </div>
+
+        <div class="c-contact-info__item">
+            <div class="c-contact-info__icon-wrapper">
+                {% svg_icon 'location' 'c-contact-info__icon' %}
+            </div>
+            <div class="c-contact-info__content">
+                <h3 class="c-contact-info__label">Офис</h3>
+                <p class="c-contact-info__text">г. Москва, ул. Арбат, 1</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="c-socials">
+        <h4 class="c-socials__title">Мы в соцсетях</h4>
+        <div class="c-socials__list">
+            <a href="#" class="c-socials__link">{% svg_icon 'telegram' 'c-socials__icon' %}</a>
+            <a href="#" class="c-socials__link">{% svg_icon 'behance' 'c-socials__icon' %}</a>
+            <a href="#" class="c-socials__link">{% svg_icon 'github' 'c-socials__icon' %}</a>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,72 @@
+@use '../tokens/mixins' as m;
+@use '../tokens/media';
+
+// 🧩 BLOCK: BUTTON (Atomic component)
+
+.c-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 12px 32px;
+    border-radius: var(--border-radius-button, 8px);
+    font-family: var(--font-family-base, sans-serif);
+    font-size: 16px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all var(--transition-duration, 0.2s) ease;
+    cursor: pointer;
+    border: var(--border-button-primary, 1px solid transparent);
+    background: var(--background-button-primary-gradient, #fff);
+    color: var(--text-color-button-primary, #000);
+    min-height: var(--button-height, 38px);
+
+    @include media.mobile { 
+        padding: 10px 24px; 
+    }
+
+    &:hover {
+        background: var(--background-button-hover-gradient);
+        color: var(--text-color-button-hover);
+        border: var(--border-button-hover);
+        transform: scale(1.02);
+        box-shadow: var(--shadow-card);
+    }
+
+    &:active {
+        background: var(--background-button-click-gradient);
+        color: var(--text-color-button-click);
+        border: var(--border-button-click);
+        transform: scale(0.98);
+    }
+
+    &--primary {
+        // Ожидается, что база и есть primary, но можно добавить модификаторы
+    }
+
+    &--secondary {
+        background: transparent;
+        border: 1px solid var(--color-gray-400, #888);
+        color: var(--text-color-primary, #fff);
+
+        &:hover {
+            border-color: var(--color-white);
+            background: rgba(255, 255, 255, 0.05);
+        }
+    }
+
+    &--full {
+        width: 100%;
+        display: flex;
+    }
+
+    &__icon {
+        width: 18px;
+        height: 18px;
+        transition: transform 0.2s;
+
+        .c-btn:hover & {
+            transform: translateX(4px);
+        }
+    }
+}

@@ -1,0 +1,22 @@
+<section class="c-contact-form-section">
+    <div class="c-contact-form-wrap">
+        <h2 class="c-contact-form__title">Напишите нам</h2>
+        <p class="c-contact-form__subtitle">Заполните форму, и мы ответим в течение 24 часов.</p>
+        
+        <form class="c-contact-form" action="" method="post">
+            {% csrf_token %}
+            <div class="c-contact-form__group">
+                <input type="text" name="name" class="c-input" placeholder="Ваше имя" required>
+            </div>
+            <div class="c-contact-form__group">
+                <input type="email" name="email" class="c-input" placeholder="Ваш Email" required>
+            </div>
+            <div class="c-contact-form__group">
+                <textarea name="message" class="c-textarea" placeholder="Ваше сообщение" rows="5" required></textarea>
+            </div>
+            <button type="submit" class="c-btn c-btn--primary c-btn--full">
+                Отправить сообщение
+            </button>
+        </form>
+    </div>
+</section>

@@ -1,0 +1,49 @@
+@use '../tokens/mixins' as m;
+@use '../tokens/media';
+
+// 🧩 BLOCK: FORM & INPUTS (Atomic elements)
+
+.c-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    &__group {
+        width: 100%;
+    }
+}
+
+.c-input,
+.c-textarea {
+    width: 100%;
+    min-height: var(--input-hight-text-field, 48px);
+    padding: 14px 20px;
+    background: var(--background-text-field-primary-gradient, #333);
+    border: var(--border-text-field-primary, 1px solid #444);
+    border-radius: var(--border-radius-text-field, 12px);
+    font-family: var(--font-family-sub, sans-serif);
+    font-size: 16px;
+    color: var(--text-color-primary, #fff);
+    outline: none;
+    transition: all var(--transition-duration, 0.2s) ease;
+
+    &::placeholder {
+        color: var(--text-color-tertary, rgba(255,255,255,0.4));
+    }
+
+    &:hover {
+        background: var(--background-text-field-hover-gradient);
+        border: var(--border-text-field-hover);
+    }
+
+    &:focus {
+        background: var(--background-text-field-selected-gradient);
+        border: var(--border-text-field-selected);
+        color: #fff;
+    }
+}
+
+.c-textarea {
+    min-height: 140px;
+    resize: vertical;
+}

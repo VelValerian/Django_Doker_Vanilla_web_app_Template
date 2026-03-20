@@ -1,0 +1,37 @@
+@use '../tokens/mixins' as m;
+@use '../tokens/media';
+
+// 📄 PAGE: CONTACTS
+// Уникальное расположение элементов на странице контактов.
+
+.p-contacts {
+    &__wrap {
+        padding-block: 80px;
+        @include media.tablet { padding-block: 40px; }
+    }
+
+    &__grid {
+        display: grid;
+        grid-template-columns: 1fr 1.2fr;
+        gap: 60px;
+        align-items: flex-start;
+
+        @include media.tablet {
+            grid-template-columns: 1fr;
+            gap: 40px;
+        }
+    }
+
+    &__info-cell {
+        // Оформление области с контактами
+    }
+
+    &__form-cell {
+        background: var(--background-island-primary-gradient, rgba(255,255,255,0.05));
+        padding: 60px;
+        border-radius: var(--border-radius-island-large, 32px);
+        border: 1px solid rgba(255,255,255,0.1);
+
+        @include media.tablet { padding: 32px; }
+    }
+}

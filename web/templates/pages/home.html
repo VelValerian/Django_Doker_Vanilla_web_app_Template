@@ -1,16 +1,29 @@
 {% extends "base.html" %}
+{% load static %}
+
 
 {% block content %}
-<main class="home">
-    <section class="hero">
-        <h1 class="hero__title">{{ title }}</h1>
-        <p class="hero__subtitle">{{ content }}</p>
-        <div class="hero__actions">
-            <!-- Пример использования SVG спрайта -->
-            <svg class="icon icon--large">
-                <use xlink:href="/static/icon/sprite.svg#icon-arrow-right"></use>
-            </svg>
+    {# 🏗️ HOME PAGE ASSEMBLY #}
+    
+    {% include "components/sections/hero.html" with title=title subtitle=subtitle %}
+
+    <div class="o-spacer--lg"></div>
+
+    {% include "components/sections/about_section.html" %}
+
+    <div class="o-spacer--lg"></div>
+
+    {% include "components/sections/features.html" %}
+
+    <div class="o-spacer--lg"></div>
+
+    <section class="c-cta-banner">
+        <div class="o-container">
+            <h2 class="c-cta-banner__title">Готовы начать проект?</h2>
+            <p class="c-cta-banner__subtitle">Давайте вместе создадим нечто великое.</p>
+            <a href="{% url 'pages:contacts' %}" class="c-btn c-btn--primary">
+                Связаться с нами
+            </a>
         </div>
     </section>
-</main>
 {% endblock %}
