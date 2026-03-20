@@ -19,7 +19,7 @@ dependencies = [
 requires-python = ">=3.13"
 
 [tool.pytest.ini_options]
-DJANGO_SETTINGS_MODULE = "config.settings"
+DJANGO_SETTINGS_MODULE = "config.settings.local"
 python_files = ["tests.py", "test_*.py", "*_tests.py"]
 addopts = "--reuse-db --cov=web --cov-report=term-missing --cov-report=html"
 pythonpath = ["web"]
