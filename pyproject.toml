@@ -9,9 +9,28 @@ dependencies = [
     "django-debug-toolbar",
     "psycopg",
     "redis",
-    "django-redis"
+    "django-redis",
+    "pytest-django",
+    "pytest-cov",
+    "model-bakery",
+    "pytest-xdist",
+    "pytest-sugar"
 ]
 requires-python = ">=3.13"
+
+[tool.pytest.ini_options]
+DJANGO_SETTINGS_MODULE = "config.settings"
+python_files = ["tests.py", "test_*.py", "*_tests.py"]
+addopts = "--reuse-db --cov=web --cov-report=term-missing --cov-report=html"
+pythonpath = ["web"]
+
+[tool.coverage.run]
+omit = [
+    "*/migrations/*",
+    "*/tests/*",
+    "web/config/*",
+    "manage.py"
+]
 
 [tool.poetry]
 package-mode = false

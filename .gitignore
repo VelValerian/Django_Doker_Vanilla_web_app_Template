@@ -10,3 +10,5 @@ __pycache__/
 node_modules/
 static/css/styles.css.map
 media/
+.coverage
+htmlcov/
