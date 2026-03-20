@@ -27,6 +27,9 @@ down:
 restart:
 	docker compose restart
 
+rename:
+	python scripts/rename_project.py $(NAME)
+
 logs:
 	docker compose logs -f
 
