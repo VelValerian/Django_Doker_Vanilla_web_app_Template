@@ -1,0 +1,73 @@
+# 🧬 NOMONDAYS: CONTINUOUS INTEGRATION (V1.0)
+# This workflow runs on every push/PR to ensure code quality.
+
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    services:
+      redis:
+        image: redis:7-alpine
+        ports:
+          - 6379:6379
+        options: >-
+          --health-cmd "redis-cli ping"
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+      db:
+        image: postgres:16-alpine
+        env:
+          POSTGRES_DB: postgres
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+
+    steps:
+    - name: 📥 Checkout repository
+      uses: actions/checkout@v4
+
+    - name: 🐍 Set up Python 3.13
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.13'
+
+    - name: 📦 Install Poetry
+      run: |
+        curl -sSL https://install.python-poetry.org | python3 -
+        echo "$HOME/.local/bin" >> $GITHUB_PATH
+
+    - name: 🛠️ Install dependencies
+      run: |
+        poetry install --no-interaction --no-root
+      working-directory: .
+
+    - name: 🧪 Run tests (with Coverage)
+      run: |
+        poetry run pytest
+      working-directory: .
+      env:
+        # Mock ENV for tests
+        SECRET_KEY: "ci-test-key-placeholder"
+        DEBUG: "True"
+        POSTGRES_DB: "postgres"
+        POSTGRES_USER: "postgres"
+        POSTGRES_PASSWORD: "postgres"
+        POSTGRES_HOST: "localhost"
+        POSTGRES_PORT: "5432"
+        # Since we don't have Postgres in services (too heavy for CI), we use sqlite for tests if needed
+        # Or you can add Postgres service here. For now, sqlite is a good start for infra tests.

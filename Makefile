@@ -36,6 +36,9 @@ shell:
 migrate:
 	docker compose exec web python web/manage.py migrate
 
+collectstatic:
+	docker compose exec web python web/manage.py collectstatic --noinput
+
 manage:
 	docker compose exec web python web/manage.py $(ARGS)
 
