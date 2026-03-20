@@ -12,3 +12,4 @@ static/css/styles.css.map
 media/
 .coverage
 htmlcov/
+collected_static/
