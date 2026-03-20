@@ -22,4 +22,4 @@ def test_home_page_content(client):
     url = reverse('pages:home')
     response = client.get(url)
     # Check that the site title from our OG tags update is present
-    assert "Nomondays | Creative Studio" in response.content.decode()
+    assert "BrandName | Creative Studio" in response.content.decode()

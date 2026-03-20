@@ -1,7 +1,7 @@
 [project]
-name = "nomondays-web-app"
+name = "brandname-web-app"
 version = "0.1.0"
-description = "Nomondays Web App - Infrastructure V2.0"
+description = "BrandName Web App - Infrastructure V2.0"
 authors = [{name = "VelValerian"}]
 dependencies = [
     "django==5.2.12",
@@ -19,7 +19,7 @@ dependencies = [
 requires-python = ">=3.13"
 
 [tool.pytest.ini_options]
-DJANGO_SETTINGS_MODULE = "config.settings"
+DJANGO_SETTINGS_MODULE = "config.settings.local"
 python_files = ["tests.py", "test_*.py", "*_tests.py"]
 addopts = "--reuse-db --cov=web --cov-report=term-missing --cov-report=html"
 pythonpath = ["web"]

@@ -1,4 +1,4 @@
-# 🐳 NOMONDAYS INFRASTRUCTURE (V2.1)
+# 🐳 BRANDNAME INFRASTRUCTURE (V2.1)
 # Production-ready stack with Nginx Sidecar, Postgres, Redis, and Web.
 
 services:

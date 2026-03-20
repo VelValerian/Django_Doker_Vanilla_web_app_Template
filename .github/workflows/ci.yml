@@ -1,4 +1,4 @@
-# 🧬 NOMONDAYS: CONTINUOUS INTEGRATION (V1.0)
+# 🧬 BRANDNAME: CONTINUOUS INTEGRATION (V1.0)
 # This workflow runs on every push/PR to ensure code quality.
 
 name: CI
