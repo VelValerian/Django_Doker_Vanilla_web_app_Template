@@ -30,6 +30,7 @@ INSTALLED_APPS = [
 
     # 🏗️ PROJECT APPLICATIONS
     'apps.core',
+    'apps.pages',
 ]
 
 MIDDLEWARE = [

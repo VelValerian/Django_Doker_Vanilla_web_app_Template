@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+<main class="home">
+    <section class="hero">
+        <h1 class="hero__title">{{ title }}</h1>
+        <p class="hero__subtitle">{{ content }}</p>
+        <div class="hero__actions">
+            <!-- Пример использования SVG спрайта -->
+            <svg class="icon icon--large">
+                <use xlink:href="/static/icon/sprite.svg#icon-arrow-right"></use>
+            </svg>
+        </div>
+    </section>
+</main>
+{% endblock %}

@@ -38,6 +38,7 @@ services:
       - "8000:8000"
     volumes:
       - .:/src/
+      - ./dbdata/media:/src/web/media/
     depends_on:
       db:
         condition: service_healthy
